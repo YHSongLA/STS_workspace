@@ -92,7 +92,7 @@ public class UserController {
 	    	
 	    	// RETRIEVE ALL BOOKS
 	    	List<Book> allBooks = bookServ.allBooks();
-	    	
+	    	// SET USER & ALL BOOKS
 	    	model.addAttribute("user", loggedUser);
 	    	model.addAttribute("books", allBooks);
 	    	return "home.jsp";

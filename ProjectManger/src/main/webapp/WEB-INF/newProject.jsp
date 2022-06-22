@@ -16,26 +16,26 @@
 </head>
 <body class="container bg-secondary">
 	<div class="d-flex justify-content-between align-items-center">
-		<h1>Add a book</h1>
+		<h1>Add a project</h1>
 		<a href="/home">Go Home</a>
 	</div>
 	<div class="bg-sucess">
-		<form:form action="/create/book" method="POST" modelAttribute="bookObj">
+		<form:form action="/create/project" method="POST" modelAttribute="projectObj">
 			<form:input path="creator" type="hidden" value="${user_id}"/>
 			<div class="mb-3">
-  				<form:label for="title" class="form-label" path="title">Title:</form:label>
+  				<form:label class="form-label" path="title">Title:</form:label>
   				<form:input type="text" class="form-control" path="title"/>
   				<form:errors path="title"/>
 			</div>
 			<div class="mb-3">
-  				<form:label for="author" class="form-label" path="author">Author:</form:label>
-  				<form:input type="text" class="form-control" path="author"/>
-  				<form:errors path="author"/>
+  				<form:label class="form-label" path="description">Description:</form:label>
+  				<form:input type="text" class="form-control" path="description"/>
+  				<form:errors path="description"/>
 			</div>
 			<div class="mb-3">
-  				<form:label for="thoughts" class="form-label" path="thoughts">Your Thoughts:</form:label>
-  				<form:input type="text" class="form-control" path="thoughts"/>
-  				<form:errors path="thoughts"/>
+  				<form:label class="form-label" path="dueDate">Due Date:</form:label>
+  				<form:input type="date" class="form-control" path="dueDate"/>
+  				<form:errors path="dueDate"/>
 			</div>
 			<div class="mb-3 text-center">
 				<button class="btn btn-primary" type="submit">Submit</button>

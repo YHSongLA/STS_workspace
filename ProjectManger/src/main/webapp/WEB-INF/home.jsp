@@ -15,33 +15,31 @@
 <title>Insert title here</title>
 </head>
 <body class="container bg-secondary">
-	<h1>Welcome, <c:out value="${user.userName}"/>!</h1>
-	<div>
-		<p>Books from everyone's shelves.</p>
-		<a href="/new/book">Add a book!</a>
+	<h1>Welcome, <c:out value="${user.firstName}"/>!</h1>
+	<div class="d-flex justify-content-between align-items-center">
+		<p>All Projects</p>
+		<a href="/new/project">+ new project</a>
+		<a href="/logout" class="btn btn-outline-danger mx-2">LOGOUT</a>
 	</div>
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Title</th>
-				<th>Author</th>
-				<th>Posted By</th>
+				<th>Due Date</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="book" items="${books}">
+			<c:forEach var="project" items="${projects}">
 				<tr>
-					<td><c:out value="${book.id}"/></td>
-					<td><a href="/book/${book.id}"><c:out value="${book.title}"/></a></td>
-					<td><c:out value="${book.author}"/></td>
-					<td><c:out value="${book.creator.userName}"/></td>
+					<td><c:out value="${project.id}"/></td>
+					<td><a href="/project/${project.id}"><c:out value="${project.title}"/></a></td>
+					<td><c:out value="${project.dueDate}"/></td>
+					<td>Join</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-	
-	<!-- LOG OUT -->
-	<a class="btn btn-outline-danger mx-2" href="/logout">Logout</a>
 </body>
 </html>
